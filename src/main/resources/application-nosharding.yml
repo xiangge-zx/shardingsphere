@@ -1,0 +1,9 @@
+spring:
+  config:
+    activate:
+      on-profile: nosharding
+
+  datasource:
+    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+    url: jdbc:shardingsphere:classpath:sharding/nosharding.yaml
+

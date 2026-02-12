@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuan.it.mapper.OrderMapper">
+
+    <select id="selectByUserId" resultType="com.xuan.it.entity.Order">
+        SELECT
+            order_id,
+            user_id,
+            amount,
+            status,
+            create_time
+        FROM t_order
+        WHERE user_id = #{userId}
+        ORDER BY create_time DESC
+    </select>
+
+    <select id="sumAmountByUserId" resultType="java.math.BigDecimal">
+        SELECT SUM(amount)
+        FROM t_order
+        WHERE user_id = #{userId}
+    </select>
+
+    <select id="selectByStatus" resultType="com.xuan.it.entity.Order">
+        SELECT
+            order_id,
+            user_id,
+            amount,
+            status,
+            create_time
+        FROM t_order
+        WHERE status = #{status}
+        ORDER BY create_time DESC
+    </select>
+
+</mapper>
+

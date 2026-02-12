@@ -1,0 +1,26 @@
+dataSources:
+  ds0:
+    dataSourceClassName: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    jdbcUrl: jdbc:mysql://81.71.41.177:3306/ds01?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: admin
+    password: SisUylirg2#l
+
+rules:
+  - !SHARDING
+    tables:
+      # 单表模式：逻辑表 t_order 直接映射到物理表 t_order（无分表策略）
+      t_order:
+        actualDataNodes: ds0.t_order
+        keyGenerateStrategy:
+          column: order_id
+          keyGeneratorName: snowflake
+    keyGenerators:
+      snowflake:
+        type: SNOWFLAKE
+        props:
+          worker-id: 1
+
+props:
+  sql-show: true
+

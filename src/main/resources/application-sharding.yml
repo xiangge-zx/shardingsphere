@@ -1,0 +1,9 @@
+spring:
+  config:
+    activate:
+      on-profile: sharding
+
+  datasource:
+    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+    url: jdbc:shardingsphere:classpath:sharding/sharding.yaml
+
