@@ -10,9 +10,9 @@ app:
         ds0:
           dataSourceClassName: com.zaxxer.hikari.HikariDataSource
           driverClassName: com.mysql.cj.jdbc.Driver
-          jdbcUrl: jdbc:mysql://81.71.41.177:3306/ds01?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
-          username: admin
-          password: SisUylirg2#l
+          jdbcUrl: jdbc:mysql://localhost:3306/ds01?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+          username: root
+          password: root
       
       rules:
         - !SHARDING
