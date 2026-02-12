@@ -25,12 +25,6 @@
         <mybatis-spring.version>3.0.3</mybatis-spring.version>
     </properties>
     <dependencies>
-        <!-- Spring Boot Web -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
         <!-- MyBatis-Plus (Spring Boot 3 专用 Starter) -->
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -50,6 +44,13 @@
             <groupId>org.apache.shardingsphere</groupId>
             <artifactId>shardingsphere-jdbc</artifactId>
             <version>${shardingsphere.version}</version>
+            <exclusions>
+                <!-- 该模块在 Maven Central 上可能不存在，且非运行/测试必须 -->
+                <exclusion>
+                    <groupId>org.apache.shardingsphere</groupId>
+                    <artifactId>shardingsphere-test-util</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- MySQL 驱动 -->
